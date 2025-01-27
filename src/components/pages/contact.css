@@ -1,0 +1,153 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d); /* Unique gradient background */
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+}
+
+.contact-form-container {
+  max-width: 700px;
+  margin: 20px auto; /* Reduced margin */
+  padding: 20px; /* Reduced padding for smaller height */
+  background: linear-gradient(to right, #4f9d6e, #f9c74f);
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(20px);
+  transition: transform 0.3s ease-out;
+}
+
+.contact-form-container:hover {
+  transform: translateY(0px);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px; /* Reduced margin */
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Reduced gap for smaller height */
+}
+
+.form-group {
+  position: relative;
+}
+
+label {
+  font-size: 16px;
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: block;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px; /* Reduced padding */
+  font-size: 14px; /* Smaller font size */
+  border: 2px solid #fff;
+  border-radius: 8px;
+  background: transparent;
+  color: #fff;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 10px rgba(72, 191, 50, 0.5);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px; /* Reduced height */
+}
+
+button.submit-btn {
+  padding: 10px 25px; /* Reduced padding */
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 14px; /* Smaller font size */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  align-self: center;
+}
+
+button.submit-btn:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+button.submit-btn:focus {
+  outline: none;
+}
+
+/* Responsive Design */
+
+/* Mobile Screens */
+@media (max-width: 768px) {
+  .contact-form-container {
+    padding: 15px;
+    margin: 15px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  input,
+  textarea {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  button.submit-btn {
+    padding: 8px 20px;
+    font-size: 12px;
+  }
+}
+
+/* Tablet Screens */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .contact-form-container {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  button.submit-btn {
+    padding: 10px 25px;
+    font-size: 14px;
+  }
+}
+
+/* Desktop Screens */
+@media (min-width: 1025px) {
+  .contact-form-container {
+    max-width: 700px;
+    padding: 30px;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  button.submit-btn {
+    padding: 12px 30px;
+    font-size: 16px;
+  }
+}

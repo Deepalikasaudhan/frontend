@@ -1,0 +1,273 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: #f4f4f4;
+  color: #333;
+}
+
+.home {
+  padding: 20px;
+}
+
+/* Slider Wrapper */
+.slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background: #fff;
+}
+
+/* Slider Heading Box for Slider 2 */
+.slider-heading-box {
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px 10px 0 0;
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  animation: changeHeadingBackground 5s infinite;
+}
+
+/* Slide Container */
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Single Slide (for Slider 1) */
+.slide {
+  flex: 0 0 100%; /* Each image occupies 100% of the container width */
+  box-sizing: border-box;
+  text-align: center;
+  position: relative;
+  padding: 10px;
+}
+
+/* Slider Images */
+.slide img {
+  width: 100%;
+  height: 480px;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.slide img:hover {
+  transform: scale(1.05);
+}
+
+/* Content Box for Slider 1 */
+.slide-content {
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.slide-content h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.slide-content p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.slide-content .slide-button {
+  background-color: #ff758c;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.slide-content .slide-button:hover {
+  background-color: #ff6171;
+}
+
+/* Slider Navigation Buttons */
+.slider .prev,
+.slider .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 5px;
+}
+
+.slider .prev {
+  left: 10px;
+}
+
+.slider .next {
+  right: 10px;
+}
+
+.slider .prev:hover,
+.slider .next:hover {
+  background: #ff758c;
+}
+
+/* Second Slider: Multiple Images Per Slide */
+.second-slider .slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Each slide in the second slider takes 30% of the width */
+.second-slider .slide {
+  flex: 0 0 31%; /* Each slide occupies 30% of the container's width */
+  box-sizing: border-box;
+  text-align: center;
+  position: relative;
+  padding: 10px;
+}
+
+/* Slider Images */
+.second-slider .slide img {
+  width: auto; /* Ensures the image fills the width of the slide */
+  height: 350px;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.second-slider .slide img:hover {
+  transform: scale(1.05);
+}
+
+/* Content Box for Slider 2 */
+.second-slider .slide-content-box {
+  background: #fff;
+  margin-top: 10px;
+  padding: 15px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #333;
+  font-family: 'Arial', sans-serif;
+}
+
+.second-slider .slide-content-box h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.second-slider .slide-content-box p {
+  margin: 10px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.second-slider .slide-content-box .slide-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #ff758c;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.second-slider .slide-content-box .slide-button:hover {
+  background: #ff6171;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  /* For first slider */
+  .slide {
+    flex: 0 0 100%; /* Full-width for the first slider */
+  }
+
+  /* For second slider */
+  .second-slider .slide {
+    flex: 0 0 45%; /* Reduce to 2 images per row on tablets */
+  }
+
+  .second-slider .slider-heading-box {
+    font-size: 20px;
+  }
+
+  .second-slider .slide-content-box h2 {
+    font-size: 16px;
+  }
+
+  .second-slider .slide-content-box p {
+    font-size: 14px;
+  }
+
+  .slider .prev,
+  .slider .next {
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* For first slider */
+  .slide {
+    flex: 0 0 100%; /* Single image per row on small screens */
+  }
+
+  /* For second slider */
+  .second-slider .slide {
+    flex: 0 0 100%; /* Single image per row on small screens */
+  }
+
+  .second-slider .slider-heading-box {
+    font-size: 18px;
+  }
+
+  .second-slider .slide-content-box h2 {
+    font-size: 16px;
+  }
+
+  .second-slider .slide-content-box p {
+    font-size: 14px;
+  }
+
+  .slider .prev,
+  .slider .next {
+    padding: 6px 12px;
+  }
+}
+
+/* Dynamic Background Animation */
+@keyframes changeHeadingBackground {
+  0% {
+    background-color: #f9c74f;
+  }
+  25% {
+    background-color: #90be6d;
+  }
+  50% {
+    background-color: #f8961e;
+  }
+  75% {
+    background-color: #277da1;
+  }
+  100% {
+    background-color: #ef476f;
+  }
+}
