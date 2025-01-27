@@ -1,0 +1,126 @@
+/* Fixed Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1030; /* Ensures the navbar stays above other content */
+    background: linear-gradient(90deg, #ff7eb400, #e2ddde, #ff617169); /* Gradient background for navbar */
+    padding: 0.5rem 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for a floating effect */
+  }
+  
+  /* Add padding to the body to prevent content overlap */
+ 
+  /* Navbar Brand Styles */
+  .navbar-brand {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: #ffffff; /* White text color for the brand */
+    display: flex;
+    align-items: center;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for the text */
+  }
+  
+  .navbar-brand img {
+    width: 100px;
+    height: 80px;
+    margin-right: 10px;
+    border-radius: 8px; /* Rounded edges for the logo */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Add shadow to the logo */
+  }
+  
+  /* Navbar Links */
+  .navbar-nav {
+    margin-left: auto;
+  }
+  
+  .nav-link {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff; /* White links for contrast */
+    margin: 0 15px;
+    position: relative; /* For hover effect */
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: #ffcccb; /* Lighter hover color */
+    transform: scale(1.1); /* Slightly increase size on hover */
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 50%;
+    background-color: #fff;
+    transition: width 0.3s ease, left 0.3s ease;
+  }
+  
+  .nav-link:hover::after {
+    width: 100%; /* Underline expands on hover */
+    left: 0;
+  }
+  
+  /* Navbar Toggler Styles */
+  .navbar-toggler {
+    border: none;
+    background-color: rgba(255, 255, 255, 0.2); /* Transparent button */
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px 10px;
+  }
+  
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+  
+  /* Responsive Styles for Tablets (max-width: 768px) */
+  @media (max-width: 768px) {
+    .navbar-brand {
+      font-size: 1.8rem;
+    }
+  
+    .navbar-brand img {
+      width: 90px;
+      height: 70px;
+    }
+  
+    .nav-link {
+      font-size: 0.95rem;
+    }
+  }
+  
+  /* Responsive Styles for Small Screens (max-width: 576px) */
+  @media (max-width: 576px) {
+    .navbar-brand {
+      font-size: 1.7rem;
+    }
+  
+    .navbar-brand img {
+      width: 80px;
+      height: 60px;
+    }
+  
+    .nav-link {
+      font-size: 0.9rem;
+      margin: 5px 0;
+    }
+  
+    .navbar-nav {
+      text-align: center;
+      width: 100%;
+    }
+  
+    .nav-link:hover::after {
+      background-color: #ffcccb; /* Lighter underline color on hover for smaller screens */
+    }
+  
+    .navbar-toggler {
+      margin: auto;
+    }
+  }
+  
